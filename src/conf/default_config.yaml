@@ -1,0 +1,18 @@
+net_type: 'disnet'
+min_epoch: 1000
+max_epoch: 2000
+batch: 10
+input_size: 1280
+device: [0,1,2,3]
+gtnet_path: 'saved_models/best_models/gtnet.ckpt'
+disnet_path: 'saved_models/best_models/disnet.ckpt'
+dataset:
+    augmentation: True
+    train:
+        image_path: '../data/DIS5K/DIS-TR/im'
+        mask_path: '../data/DIS5K/DIS-TR/gt'
+        num_workers: 8
+    val:
+        image_path: '../data/DIS5K/DIS-VD/im'
+        mask_path: '../data/DIS5K/DIS-VD/gt'
+        num_workers: 4
