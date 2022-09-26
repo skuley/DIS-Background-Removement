@@ -1,4 +1,23 @@
-# BackgroundRemovement
+<h1 align="center" href="https://arxiv.org/pdf/2203.03041.pdf">
+    Highly Accurate Dichotomous Image Segmentation （ECCV 2022）
+</h1>
+<p align="center">
+    <img style="width: 30px" src="./utils/icons/github.gif" href="https://github.com/xuebinqin/DIS">
+</p>
+<hr>
+<h2 align="center">
+    IS-Net/GT-Encoder Tuning and Data Augmentation
+</h2>
+
+## [Highly Accurate Dichotomous Image Segmentation （ECCV 2022）](https://arxiv.org/pdf/2203.03041.pdf) 
+
+
+# Data Augmentation
+## GT Data Augmentation
+- 
+
+
+
 - DISNET의 decoder부분에서 작아진 이미지들을 영상처리가 아닌 딥러닝으로 이미지를 키워 데이터 손실을 줄이고 GT에 가까운 side outputs들을 추출하여 loss 계산할때 큰 도움을 받는것으로 보였다.
 - 보다 나은 독해를 위해 용어 정리 해 두었다.
 - convolution_transpose_2d를 단순히 deconvolutional_upsample, 또는 deconv_upsample로 표현하겠다.
