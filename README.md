@@ -2,20 +2,26 @@
     Highly Accurate Dichotomous Image Segmentation （ECCV 2022）
 </h1>
 <p align="center">
-    <img style="width: 30px" src="./utils/icons/github.gif" href="https://github.com/xuebinqin/DIS">
 </p>
 <hr>
 <h2 align="center">
     IS-Net/GT-Encoder Tuning and Data Augmentation
 </h2>
 
-## [Highly Accurate Dichotomous Image Segmentation （ECCV 2022）](https://arxiv.org/pdf/2203.03041.pdf) 
+<div align="center">
+    If you haven't read or looked into the paper or github
+    please do so before go deeper..
+    <br>
+    <img href="https://arxiv.org/pdf/2203.03041.pdf" width="25px" src="utils/icons/paper.gif">
+    &nbsp;
+    <img href="https://github.com/xuebinqin/DIS" width="28px" src="utils/icons/github.gif">
+</div>
+ 
+<hr>
 
-
-# Data Augmentation
+# ⠀Data Augmentation
 ## GT Data Augmentation
-- 
-
+-asdf
 
 
 - DISNET의 decoder부분에서 작아진 이미지들을 영상처리가 아닌 딥러닝으로 이미지를 키워 데이터 손실을 줄이고 GT에 가까운 side outputs들을 추출하여 loss 계산할때 큰 도움을 받는것으로 보였다.
