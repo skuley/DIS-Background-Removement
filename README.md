@@ -12,9 +12,9 @@
     If you haven't read or looked into the paper or github
     please do so before go deeper..
     <br><br>
-    <img href="https://arxiv.org/pdf/2203.03041.pdf" width="25px" src="utils/icons/paper.gif">
+    <a href="https://arxiv.org/pdf/2203.03041.pdf" ><img width="25px" src="utils/icons/paper.gif" ></a>
     &nbsp; 
-    <img href="https://github.com/xuebinqin/DIS" width="28px" src="utils/icons/github.gif">
+    <a href="https://github.com/xuebinqin/DIS"><img width="28px" src="utils/icons/github.gif"></a>
 </div>
  
 <hr>
