@@ -37,10 +37,10 @@ class Dataset(Dataset):
 
         if self.image_transform:
             transformed = self.image_transform(image=image)
-            image = transformed['image']
+            image = transformed['images']
         if self.mask_transform:
             transformed = self.mask_transform(image=image, mask=mask)
-            image, mask = transformed['image'], transformed['mask']
+            image, mask = transformed['images'], transformed['mask']
 
         image = transforms.ToTensor()(image).float()
         mask = transforms.ToTensor()(mask).float()
@@ -52,4 +52,4 @@ class Dataset(Dataset):
         else:
             image, mask = self.transform_dataset(self.images[idx], self.masks[idx])
 
-        return {'image': image, 'mask': mask}
+        return {'images': image, 'mask': mask}

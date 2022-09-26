@@ -55,13 +55,13 @@ output_masks = []
 
 # print('saving original masks..')
 for idx in range(len(dataset)):
-    image = dataset[idx]['image']
+    image = dataset[idx]['images']
     image = image.float()
     image = image.to(device)
     image = image.unsqueeze(0)
     # np_mask = tensor_to_numpy(mask)
     # cv2.imwrite(os.path.join(save_origin_mask_path, f'{str(idx).zfill(4)}.png'), np_mask)
-#     print(image.shape)
+#     print(images.shape)
     with torch.no_grad():
         outputs = model(image)
     output = outputs[0]

@@ -51,4 +51,4 @@ class RandomBlur(object):
             patch = cv2.blur(patch, (kernel_size, kernel_size))
             img[y1:y2, x1:x2] = patch
 
-        return {'image':img, 'mask':mask}
+        return {'images':img, 'mask':mask}

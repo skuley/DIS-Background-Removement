@@ -234,7 +234,7 @@ for epoch in range(0, epoch_num):
     for i, data in enumerate(salobj_dataloader):
         ite_num = ite_num + 1
         ite_num4val = ite_num4val + 1
-        inputs, labels = data['image'], data['label']
+        inputs, labels = data['images'], data['label']
         inputs = inputs.type(torch.FloatTensor)
         labels = labels.type(torch.FloatTensor)
         inputs_v, labels_v = inputs.cuda(), labels.cuda()
@@ -263,7 +263,7 @@ for epoch in range(0, epoch_num):
     
 #     for i, data in enumerate(val_dataloader):
 
-#         inputs, labels = data['image'], data['label']
+#         inputs, labels = data['images'], data['label']
 
 #         inputs = inputs.type(torch.FloatTensor)
 #         labels = labels.type(torch.FloatTensor)
@@ -280,7 +280,7 @@ for epoch in range(0, epoch_num):
 
     for i, data in enumerate(test_dataloader):
 
-        inputs, labels = data['image'], data['label']
+        inputs, labels = data['images'], data['label']
 
         inputs = inputs.type(torch.FloatTensor)
         labels = labels.type(torch.FloatTensor)

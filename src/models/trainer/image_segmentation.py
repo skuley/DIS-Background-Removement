@@ -62,7 +62,7 @@ class ImageSegmentation(pl.LightningModule):
         cv2.imwrite(image_path, cat_img)
 
     def training_step(self, batch, batch_idx):
-        image, mask = batch['image'], batch['mask']
+        image, mask = batch['images'], batch['mask']
         loss = self.get_loss(image, mask)
         loss_log = {'loss': loss}
         self.log_dict(loss_log)
@@ -73,7 +73,7 @@ class ImageSegmentation(pl.LightningModule):
         save_image_path = f'validation_images/{now.strftime("%Y%m%d")}'
         os.makedirs(save_image_path, exist_ok=True)
         loss_list = []
-        for idx, (image, mask) in enumerate(zip(batch['image'], batch['mask'])):
+        for idx, (image, mask) in enumerate(zip(batch['images'], batch['mask'])):
             
             image = image.unsqueeze(0)
             mask = mask.unsqueeze(0)
