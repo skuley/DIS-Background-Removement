@@ -55,7 +55,7 @@ output_masks = []
 
 # print('saving original masks..')
 for idx in range(len(dataset)):
-    image = dataset[idx]['images']
+    image = dataset[idx]['image']
     image = image.float()
     image = image.to(device)
     image = image.unsqueeze(0)
