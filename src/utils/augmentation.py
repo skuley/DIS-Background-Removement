@@ -7,7 +7,7 @@ import random
 
 class RandomBlur(object):
 
-    def __call__(self,image=None, mask=None):
+    def __call__(self,image=None, mask=None, patches=5):
         # random blur
         img = image.copy()
         mask = mask.copy()
@@ -25,8 +25,8 @@ class RandomBlur(object):
 
         h,w = img.shape[:2]
 
-        repeat = random.randint(1,5)
-        for a in range(repeat):
+        # repeat = random.randint(1,patches)
+        for turn in range(1,patches):
             target_coor = tuple(max_contour[random.randint(0, len(max_contour) - 1)][0])
             cy = target_coor[1]
             cx = target_coor[0]
