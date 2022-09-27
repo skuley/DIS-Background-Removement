@@ -31,6 +31,7 @@
 - Added blurred patch on foreground and background boundary locations to all original images to increase complexity.
 - Extracted the biggest object from GT by selecting the largest contour area.
 - Number of pathces can be chosen when calling function by passing down through keyword argument
+- Area of patches will be randomly chosen.
 
 ```python
 from src.utils.augmentation import RandomBlur
@@ -47,9 +48,10 @@ random_blur(image="opencv original image", mask="opencv GT mask", patches=2)
 - 80% 90 degree Rotation
 - 80% ElasticTransform
 
-[//]: # (# Model Tuning)
-
-[//]: # (## GT Encoder)
+# Model Tuning
+## GT Encoder
+- Even if GT Encoder is overfitted, during Feature Synchronization with Image Segmentation Component, stages below EN_2's preservation seems isn't suitable for pixel wise segmentation.
+- Thus, I have increased feature_maps below EN_2 stage
 
 [//]: # ()
 [//]: # (- DISNET의 decoder부분에서 작아진 이미지들을 영상처리가 아닌 딥러닝으로 이미지를 키워 데이터 손실을 줄이고 GT에 가까운 side outputs들을 추출하여 loss 계산할때 큰 도움을 받는것으로 보였다.)
