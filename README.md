@@ -24,6 +24,7 @@
 <img src="utils/images/GT_augementation.png">
 
 - Added BCE_Loss calculation between the output and Edged after filled GT loss calculation to aid the seperation between foreground and background.
+- Got reference from [EGNett: Edge Guidance Network for Salient Object Detection](https://arxiv.org/pdf/1908.08297.pdf) which is mainly about aiding discriminate foreground better from similar color range background.
 
 ## Random Blur
 <img src="utils/images/random_blur.png">
@@ -50,8 +51,10 @@ random_blur(image="opencv original image", mask="opencv GT mask", patches=2)
 
 # Model Tuning
 ## GT Encoder
-- Even if GT Encoder is overfitted, during Feature Synchronization with Image Segmentation Component, stages below EN_2's preservation seems isn't suitable for pixel wise segmentation.
--   
+- In SOTA model, All feature maps below EN_2 stage, the size of output get smaller as stage goes on.
+- In order to preserve detailed pixels while encoding, instead of resizing upsample, I've continuously enlarged with [convolutional transpose 2d]() to all stages until its' same size as EN_2 shape.
+- Even if GT Encoder is overfitted, during Feature Synchronization with Image Segmentation Component, stages below EN_2's preservation seemed isn't suitable for pixel wise segmentation.
+- 
 
 [//]: # ()
 [//]: # (- DISNET의 decoder부분에서 작아진 이미지들을 영상처리가 아닌 딥러닝으로 이미지를 키워 데이터 손실을 줄이고 GT에 가까운 side outputs들을 추출하여 loss 계산할때 큰 도움을 받는것으로 보였다.)
